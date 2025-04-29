@@ -1,12 +1,27 @@
 <mvc:View controllerName="tobiasmareco.invoices.controller.MainView"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
     <Page id="page" title="{i18n>title}">
         <content> 
             <Panel headerText="{i18n>selectionScreenText}">
                 <Label id="lbShipName" text="Sample text" labelFor="shipName" class="sapUiSmallMargin" />
-                <Input id="shipName"  width="200px" class="sapUiSmallMarginEnd" />
+                <Input id="shipName"  width="200px" class="sapUiSmallMarginEnd" value="{selectionScreen>/shipName}" />
                 <Label id="lbCountry" text="Country" class="sapUiSmallMargin"/>
+                <Select id="slCountry" selectedKey="{selectionScreen>/CountryKey}" forceSelection="false" items="{selectionScreen>/Countries}">
+                    <items>
+                        <core:Item key="{selectionScreen>key}" text="{selectionScreen>Text}"/>
+                    </items>
+                </Select>
+
+                <Select id="slStatus" selectedKey="{status>/default}" forceSelection="true" items="{status>/status}" >
+                    <items>
+                        <core:Item key="{status>key}" text="{status>Text}"/>
+                    </items>
+                </Select>
+
+                <Button id="btFilter" text="{i18n>buttonFilter}" icon="sap-icon://filter" press="onFilter" class="sapUiSmallMarginEnd"/>
+                <Button id="btClearFilter" text="{i18n>buttonClearFilter}" icon="sap-icon://clear-filter" press="onClearFilter" class="sapUiSmallMarginEnd"/>
             </Panel>
         </content>
     </Page>
