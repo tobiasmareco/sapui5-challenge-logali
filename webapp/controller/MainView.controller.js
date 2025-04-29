@@ -22,8 +22,8 @@ sap.ui.define([
         },
         onClearFilter(oEnvent){
             const oModelSelectionScreen = this.getView().getModel("selectionScreen");
-            oModelSelectionScreen.setProperty("/CountryKey","");
             oModelSelectionScreen.setProperty("/shipName","");
+            oModelSelectionScreen.setProperty("/CountryKey","");
         }
     });
 });

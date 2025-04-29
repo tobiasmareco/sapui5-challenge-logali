@@ -8,13 +8,13 @@
                 <Label id="lbShipName" text="Sample text" labelFor="shipName" class="sapUiSmallMargin" />
                 <Input id="shipName"  width="200px" class="sapUiSmallMarginEnd" value="{selectionScreen>/shipName}" />
                 <Label id="lbCountry" text="Country" class="sapUiSmallMargin"/>
-                <Select id="slCountry" selectedKey="{selectionScreen>/CountryKey}" forceSelection="false" items="{selectionScreen>/Countries}">
+                <Select id="slCountry" selectedKey="{selectionScreen>/CountryKey}" forceSelection="false" items="{selectionScreen>/Countries}" class="sapUiSmallMarginEnd">
                     <items>
                         <core:Item key="{selectionScreen>key}" text="{selectionScreen>Text}"/>
                     </items>
                 </Select>
 
-                <Select id="slStatus" selectedKey="{status>/default}" forceSelection="true" items="{status>/status}" >
+                <Select id="slStatus" selectedKey="{status>/default}" forceSelection="true" items="{status>/status}" class="sapUiSmallMarginEnd">
                     <items>
                         <core:Item key="{status>key}" text="{status>Text}"/>
                     </items>
