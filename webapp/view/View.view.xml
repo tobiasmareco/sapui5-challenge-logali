@@ -1,6 +1,63 @@
 <mvc:View controllerName="tobiasmareco.form.controller.View"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+>
     <Page id="page" title="{i18n>title}">
+        <content>
+            <f:Form
+                id="formRegister"
+                title=""
+                editable="true">
+
+                <f:layout>
+                    <f:ResponsiveGridLayout id="lResponsive" />
+                </f:layout>
+
+                <f:FormContainer id="fcPersonalInformation" title="{ i18n>titlePersonalInf }">
+
+                    <f:FormElement id="idId">
+                        <Label id="lbId" text="{i18n>textId}" required="true" />
+                        <Input id="inputId" value="" required="true"></Input>
+                    </f:FormElement>
+
+                    <f:FormElement id="idTypeDocument">
+                        <Label id="idTypeDoc" text="{i18n>textTypeDoc}" required="true" />
+                        <Select id="inputTypeDoc" selectedKey="" forceSelection="true"
+                            items="{typeDocument/>documents}" required="true">
+                            <items>
+                                <core:Item id="slItemTypeDoc" key="{}" text="{}" />
+                            </items>
+                        </Select>
+                    </f:FormElement>
+
+                    <f:FormElement id="idNumerDoc">
+                        <Label id="NumerDoc" text="{i18n>textNumerDoc}" required="true" />
+                        <Input id="inputNumerDoc" value="" required="true"></Input>
+                    </f:FormElement>
+
+                    <f:FormElement id="idFirstName">
+                        <Label id="lbFirstName" text="{i18n>textFirstName}" required="true" />
+                        <Input id="inputFirstName" value="" required="true"></Input>
+                    </f:FormElement>
+
+                    <f:FormElement id="idLastName">
+                        <Label id="lbLastName" text="{i18n>textLastName}" required="true" />
+                        <Input id="inputLastName" value="" required="true"></Input>
+                    </f:FormElement>
+
+                    <f:FormElement id="idDateBirth">
+                        <Label id="lbDateBirth" text="{i18n>textDateBirth}" required="true" />
+                        <DatePicker id="dpDateBirth" displayFormat="dd/MM/yyyy"
+                            placeholder="select date" value="formData>/BirthDate" width="80%" />
+                    </f:FormElement>
+
+
+                </f:FormContainer>
+                
+            </f:Form>
+        </content>
     </Page>
 </mvc:View>
