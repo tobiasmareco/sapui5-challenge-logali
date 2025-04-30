@@ -101,6 +101,64 @@
 
                     </f:FormContainer>
 
+                    <f:FormContainer id="fcAddressInformation" title="{i18n>titleAddressInf}">
+
+                        <f:FormElement id="idCountry">
+                            <Label id="lbCountry" text="{i18n>textCountry}" required="true" />
+                            <Select id="slCountry" selectedKey="" forceSelection="true"
+                                items="{typeDocument/>documents}" required="true">
+                                <items>
+                                    <core:Item id="sliCountry" key="{}" text="{}" />
+                                </items>
+                            </Select>
+                        </f:FormElement>
+
+                        <f:FormElement id="idProvince">
+                            <Label id="lbProvince" text="{i18n>textProvince}" required="true" />
+                            <Select id="slProvince" selectedKey="" forceSelection="true"
+                                items="{typeDocument/>documents}" required="true">
+                                <items>
+                                    <core:Item id="sliProvince" key="{}" text="{}" />
+                                </items>
+                            </Select>
+                        </f:FormElement>
+
+                        <f:FormElement id="idRegion">
+                            <Label id="lbRegion" text="{i18n>textRegion}" required="true" />
+                            <Select id="slRegion" selectedKey="" forceSelection="true"
+                                items="{typeDocument/>documents}" required="true">
+                                <items>
+                                    <core:Item id="sliRegion" key="{}" text="{}" />
+                                </items>
+                            </Select>
+                        </f:FormElement>
+
+                        <f:FormElement id="idAddress">
+                            <Label id="lbAddress" text="{i18n>textAddress}" required="true" />
+                            <Input id="inputAddress" value="" required="true"/>
+                        </f:FormElement>
+
+                        <f:FormElement id="idPostalCode">
+                            <Label id="lbPostalCode" text="{i18n>textPostalCode}" required="true" />
+                            <Input id="inputPostalCode" value="" required="true"/>
+                        </f:FormElement>
+
+                    </f:FormContainer>
+
+                    <f:FormContainer id="fcContactInformation" title="{i18n>titleContactInf}">
+
+                    <f:FormElement id="idPhoneNumber">
+                        <Label id="lbPhoneNumber" text="{i18n>textPhoneNumber}" required="true" />
+                        <Input id="inputPhoneNumber" value="" required="true"/>
+                    </f:FormElement>
+
+                    <f:FormElement id="idEmail">
+                        <Label id="lbEmail" text="{i18n>textEmail}" required="true" />
+                        <Input id="inputEmail" value="" required="true"/>
+                    </f:FormElement>
+
+                </f:FormContainer>
+
                 </f:formContainers>
 
             </f:Form>
