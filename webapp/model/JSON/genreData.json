@@ -1,0 +1,18 @@
+{
+    "Genre":"",
+    "GenreKey":"",
+    "Genres":[
+        {
+            "key":"",
+            "Text":""
+        },
+        {
+            "key":"M",
+            "Text":"Male"
+        },
+        {
+            "key":"F",
+            "Text":"Female"
+        }
+    ]
+}

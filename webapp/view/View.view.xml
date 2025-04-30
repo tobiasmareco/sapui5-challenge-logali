@@ -11,57 +11,64 @@
                 id="formRegister"
                 title=""
                 editable="true">
-
                 <f:layout>
                     <f:ResponsiveGridLayout id="lResponsive" />
                 </f:layout>
                 <f:formContainers>
-
+                    <!-- FORM CONTAINER - PERSONAL INFORMATION -->
                     <f:FormContainer id="fcPersonalInformation" title="{i18n>titlePersonalInf}">
 
                         <f:FormElement id="idId">
                             <Label id="lbId" text="{i18n>textId}" required="true" />
-                            <Input id="inputId" value="" required="true"></Input>
+                            <Input id="inputId" value="{formDataRegister>/Id}" required="true"></Input>
                         </f:FormElement>
 
                         <f:FormElement id="idTypeDocument">
                             <Label id="idTypeDoc" text="{i18n>textTypeDoc}" required="true" />
-                            <Select id="inputTypeDoc" selectedKey="" forceSelection="true"
-                                items="{typeDocument/>documents}" required="true">
+                            <Select id="inputTypeDoc"
+                                selectedKey="{formDataRegister>/TypeDoc}"
+                                forceSelection="true"
+                                items="{mDocumentType>/TypeDocuments}" required="true">
                                 <items>
-                                    <core:Item id="slItemTypeDoc" key="{}" text="{}" />
+                                    <core:Item id="slItemTypeDoc" key="{mDocumentType>key}"
+                                        text="{mDocumentType>Text}" />
                                 </items>
                             </Select>
                         </f:FormElement>
 
                         <f:FormElement id="idNumerDoc">
                             <Label id="NumerDoc" text="{i18n>textNumerDoc}" required="true" />
-                            <Input id="inputNumerDoc" value="" required="true"></Input>
+                            <Input id="inputNumerDoc" value="{formDataRegister>/NumDoc}"
+                                required="true"></Input>
                         </f:FormElement>
 
                         <f:FormElement id="idFirstName">
                             <Label id="lbFirstName" text="{i18n>textFirstName}" required="true" />
-                            <Input id="inputFirstName" value="" required="true"></Input>
+                            <Input id="inputFirstName" value="{formDataRegister>/FirstName}"
+                                required="true"></Input>
                         </f:FormElement>
 
                         <f:FormElement id="idLastName">
                             <Label id="lbLastName" text="{i18n>textLastName}" required="true" />
-                            <Input id="inputLastName" value="" required="true"></Input>
+                            <Input id="inputLastName" value="{formDataRegister>/LastName}"
+                                required="true"></Input>
                         </f:FormElement>
 
                         <f:FormElement id="idDateBirth">
                             <Label id="lbDateBirth" text="{i18n>textDateBirth}" required="true" />
                             <DatePicker id="dpDateBirth" displayFormat="dd/MM/yyyy"
-                                placeholder="select date" value="formData>/BirthDate" width="80%" />
+                                placeholder="select date" value="{formDataRegister>/BirthDate}"
+                                width="90%" />
                         </f:FormElement>
 
                     </f:FormContainer>
-
+                    <!-- FORM CONTAINER - OTHER INFORMATION -->
                     <f:FormContainer id="fcOtherInformation" title="{i18n>titleOtherInf}">
 
                         <f:FormElement id="idPlaceBirth">
                             <Label id="lbPlaceBirth" text="{i18n>textPlaceBirth}" required="true" />
-                            <Select id="slPlaceBirth" selectedKey="" forceSelection="true"
+                            <Select id="slPlaceBirth" selectedKey="{formDataRegister>/PlaceBirth}"
+                                forceSelection="true"
                                 items="{typeDocument/>documents}" required="true">
                                 <items>
                                     <core:Item id="sliPlaceBirth" key="{}" text="{}" />
@@ -71,54 +78,66 @@
 
                         <f:FormElement id="idNationality">
                             <Label id="lbNationality" text="{i18n>textNacionality}" required="true" />
-                            <Select id="slNationality" selectedKey="" forceSelection="true"
-                                items="{typeDocument/>documents}" required="true">
+                            <Select id="slNationality"
+                                selectedKey="{formDataRegister>/Nationality>/NationalityKey}"
+                                forceSelection="true"
+                                items="{mCountries>/Nations}" required="true">
                                 <items>
-                                    <core:Item id="sliNationality" key="{}" text="{}" />
+                                    <core:Item id="sliNationality" key="{mCountries>key}"
+                                        text="{mCountries>Text}" />
                                 </items>
                             </Select>
                         </f:FormElement>
 
                         <f:FormElement id="idGenre">
                             <Label id="lbGenre" text="{i18n>textGenre}" required="true" />
-                            <Select id="slGenre" selectedKey="" forceSelection="true"
-                                items="{typeDocument/>documents}" required="true">
+                            <Select id="slGenre" selectedKey="{formDataRegister>/Genre}"
+                                forceSelection="true"
+                                items="{mGenres>/Genres}" required="true">
                                 <items>
-                                    <core:Item id="sliGenre" key="{}" text="{}" />
+                                    <core:Item id="sliGenre" key="{mGenres>key}"
+                                        text="{mGenres>Text}" />
                                 </items>
                             </Select>
                         </f:FormElement>
 
                         <f:FormElement id="idCivilStatus">
                             <Label id="lbCivilStatus" text="{i18n>textCivilStatus}" required="true" />
-                            <Select id="slCivilStatus" selectedKey="" forceSelection="true"
-                                items="{typeDocument/>documents}" required="true">
+                            <Select id="slCivilStatus" selectedKey="formDataRegister>/CivilStatus"
+                                forceSelection="true"
+                                items="{mCivilStatus>/CivilStatusList}" required="true">
                                 <items>
-                                    <core:Item id="sliCivilStatus" key="{}" text="{}" />
+                                    <core:Item id="sliCivilStatus" key="{mCivilStatus>key}"
+                                        text="{mCivilStatus>Text}" />
                                 </items>
                             </Select>
                         </f:FormElement>
 
                     </f:FormContainer>
-
+                    <!-- FORM CONTAINER - ADDRESS INFORMATION -->
                     <f:FormContainer id="fcAddressInformation" title="{i18n>titleAddressInf}">
 
                         <f:FormElement id="idCountry">
                             <Label id="lbCountry" text="{i18n>textCountry}" required="true" />
-                            <Select id="slCountry" selectedKey="" forceSelection="true"
-                                items="{typeDocument/>documents}" required="true">
+                            <Select id="slCountry" selectedKey="{formDataRegister>/Country}"
+                                forceSelection="true"
+                                items="{mCountries>/Nations}" required="true">
                                 <items>
-                                    <core:Item id="sliCountry" key="{}" text="{}" />
+                                    <core:Item id="sliCountry"
+                                        key="{mCountries>Key}"
+                                        text="{mCountries>Text}" />
                                 </items>
                             </Select>
                         </f:FormElement>
 
                         <f:FormElement id="idProvince">
                             <Label id="lbProvince" text="{i18n>textProvince}" required="true" />
-                            <Select id="slProvince" selectedKey="" forceSelection="true"
-                                items="{typeDocument/>documents}" required="true">
+                            <Select id="slProvince" selectedKey="{formDataRegister>/Province}"
+                                forceSelection="true"
+                                items="{mProvinces/>Provinces}" required="true">
                                 <items>
-                                    <core:Item id="sliProvince" key="{}" text="{}" />
+                                    <core:Item id="sliProvince" key="{mProvinces>key}"
+                                        text="{mProvinces>Text}" />
                                 </items>
                             </Select>
                         </f:FormElement>
@@ -135,33 +154,44 @@
 
                         <f:FormElement id="idAddress">
                             <Label id="lbAddress" text="{i18n>textAddress}" required="true" />
-                            <Input id="inputAddress" value="" required="true"/>
+                            <Input id="inputAddress" value="{formDataRegister>/Address}"
+                                required="true" />
                         </f:FormElement>
 
                         <f:FormElement id="idPostalCode">
                             <Label id="lbPostalCode" text="{i18n>textPostalCode}" required="true" />
-                            <Input id="inputPostalCode" value="" required="true"/>
+                            <Input id="inputPostalCode" value="{formDataRegister>/PostalCode}"
+                                required="true" />
+                        </f:FormElement>
+
+                    </f:FormContainer>
+                    <!-- FORM CONTAINER - CONTACT INFORMATION -->
+                    <f:FormContainer id="fcContactInformation" title="{i18n>titleContactInf}">
+
+                        <f:FormElement id="idPhoneNumber">
+                            <Label id="lbPhoneNumber" text="{i18n>textPhoneNumber}" required="true" />
+                            <Input id="inputPhoneNumber" value="{formDataRegister>/PhoneNumber}"
+                                required="true" />
+                        </f:FormElement>
+
+                        <f:FormElement id="idEmail">
+                            <Label id="lbEmail" text="{i18n>textEmail}" required="true" />
+                            <Input id="inputEmail" value="{formDataRegister>/Email}" required="true" />
                         </f:FormElement>
 
                     </f:FormContainer>
 
-                    <f:FormContainer id="fcContactInformation" title="{i18n>titleContactInf}">
-
-                    <f:FormElement id="idPhoneNumber">
-                        <Label id="lbPhoneNumber" text="{i18n>textPhoneNumber}" required="true" />
-                        <Input id="inputPhoneNumber" value="" required="true"/>
-                    </f:FormElement>
-
-                    <f:FormElement id="idEmail">
-                        <Label id="lbEmail" text="{i18n>textEmail}" required="true" />
-                        <Input id="inputEmail" value="" required="true"/>
-                    </f:FormElement>
-
-                </f:FormContainer>
-
                 </f:formContainers>
+                <!-- LIST CONTENT -->
 
             </f:Form>
         </content>
+        <footer>
+            <OverflowToolbar id="idOverflowToolBar">
+                <ToolbarSpacer id="idToolbarSpacer"></ToolbarSpacer>
+                <Button id="btSave" text="{i18n>textSave}" type="Success" press="saveDataRegister" />
+                <Button id="btClear" text="{i18n>textClear}" type="Reject" press="" />
+            </OverflowToolbar>
+        </footer>
     </Page>
 </mvc:View>

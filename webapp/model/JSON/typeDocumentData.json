@@ -1,0 +1,18 @@
+{
+    "TypeDocument": "",
+    "TypeDocumentKey": "",
+    "TypeDocuments": [
+        {
+            "key": "",
+            "Text": ""
+        },
+        {
+            "key": "DNI",
+            "Text": "Dni"
+        },
+        {
+            "key": "PSP",
+            "Text": "Passport"
+        }
+    ]
+}

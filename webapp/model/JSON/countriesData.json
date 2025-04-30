@@ -1,0 +1,42 @@
+{
+    "Nationality": "",
+    "NationalityKey": "",
+    "Nations": [
+      {
+        "key": "",
+        "Text": "",
+        "Regions": [],
+        "Provinces": []
+      },
+      {
+        "key": "PY",
+        "Text": "Paraguay",
+        "Regions": ["Oriental", "Occidental", "Asunción"],
+        "Provinces": ["Central", "Alto Paraná", "Itapúa"]
+      },
+      {
+        "key": "MX",
+        "Text": "Mexico",
+        "Regions": ["Noroeste", "Centro", "Sureste"],
+        "Provinces": ["Jalisco", "Ciudad de México", "Nuevo León"]
+      },
+      {
+        "key": "USA",
+        "Text": "Estados Unidos",
+        "Regions": ["Noreste", "Medio Oeste", "Sur"],
+        "Provinces": ["California", "Texas", "Florida"]
+      },
+      {
+        "key": "AR",
+        "Text": "Argentina",
+        "Regions": ["Noroeste", "Patagonia", "Cuyo"],
+        "Provinces": ["Buenos Aires", "Córdoba", "Mendoza"]
+      },
+      {
+        "key": "BR",
+        "Text": "Brazil",
+        "Regions": ["Sudeste", "Nordeste", "Sul"],
+        "Provinces": ["São Paulo", "Bahia", "Rio de Janeiro"]
+      }
+    ]
+  }

@@ -1,0 +1,18 @@
+{
+    "CivilStatus":"",
+    "CivilStatusKey":"",
+    "CivilStatusList":[
+        {
+            "key":"",
+            "Text":""
+        },
+        {
+            "key":"S",
+            "Text":"Single"
+        },
+        {
+            "key":"M",
+            "Text":"Married"
+        }
+    ]
+}
