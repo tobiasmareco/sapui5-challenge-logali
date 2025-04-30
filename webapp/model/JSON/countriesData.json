@@ -1,42 +1,82 @@
 {
-    "Nationality": "",
-    "NationalityKey": "",
-    "Nations": [
-      {
-        "key": "",
-        "Text": "",
-        "Regions": [],
-        "Provinces": []
-      },
-      {
-        "key": "PY",
-        "Text": "Paraguay",
-        "Regions": ["Oriental", "Occidental", "Asunción"],
-        "Provinces": ["Central", "Alto Paraná", "Itapúa"]
-      },
-      {
-        "key": "MX",
-        "Text": "Mexico",
-        "Regions": ["Noroeste", "Centro", "Sureste"],
-        "Provinces": ["Jalisco", "Ciudad de México", "Nuevo León"]
-      },
-      {
-        "key": "USA",
-        "Text": "Estados Unidos",
-        "Regions": ["Noreste", "Medio Oeste", "Sur"],
-        "Provinces": ["California", "Texas", "Florida"]
-      },
-      {
-        "key": "AR",
-        "Text": "Argentina",
-        "Regions": ["Noroeste", "Patagonia", "Cuyo"],
-        "Provinces": ["Buenos Aires", "Córdoba", "Mendoza"]
-      },
-      {
-        "key": "BR",
-        "Text": "Brazil",
-        "Regions": ["Sudeste", "Nordeste", "Sul"],
-        "Provinces": ["São Paulo", "Bahia", "Rio de Janeiro"]
-      }
-    ]
-  }
+  "Nationality": "",
+  "NationalityKey": "",
+  "Nations": [
+    {
+      "key": "",
+      "Text": "",
+      "Regions": [],
+      "Provinces": []
+    },
+    {
+      "key": "PY",
+      "Text": "Paraguay",
+      "Regions": [
+        { "key": "PY-1", "Text": "Oriental" },
+        { "key": "PY-2", "Text": "Occidental" },
+        { "key": "PY-3", "Text": "Asunción" }
+      ],
+      "Provinces": [
+        { "key": "PY-CEN", "Text": "Central" },
+        { "key": "PY-APA", "Text": "Alto Paraná" },
+        { "key": "PY-ITA", "Text": "Itapúa" }
+      ]
+    },
+    {
+      "key": "MX",
+      "Text": "Mexico",
+      "Regions": [
+        { "key": "MX-1", "Text": "Noroeste" },
+        { "key": "MX-2", "Text": "Centro" },
+        { "key": "MX-3", "Text": "Sureste" }
+      ],
+      "Provinces": [
+        { "key": "MX-JAL", "Text": "Jalisco" },
+        { "key": "MX-CDMX", "Text": "Ciudad de México" },
+        { "key": "MX-NLE", "Text": "Nuevo León" }
+      ]
+    },
+    {
+      "key": "USA",
+      "Text": "Estados Unidos",
+      "Regions": [
+        { "key": "US-NE", "Text": "Noreste" },
+        { "key": "US-MW", "Text": "Medio Oeste" },
+        { "key": "US-S", "Text": "Sur" }
+      ],
+      "Provinces": [
+        { "key": "US-CA", "Text": "California" },
+        { "key": "US-TX", "Text": "Texas" },
+        { "key": "US-FL", "Text": "Florida" }
+      ]
+    },
+    {
+      "key": "AR",
+      "Text": "Argentina",
+      "Regions": [
+        { "key": "AR-NO", "Text": "Noroeste" },
+        { "key": "AR-PA", "Text": "Patagonia" },
+        { "key": "AR-CU", "Text": "Cuyo" }
+      ],
+      "Provinces": [
+        { "key": "AR-BA", "Text": "Buenos Aires" },
+        { "key": "AR-CBA", "Text": "Córdoba" },
+        { "key": "AR-MZA", "Text": "Mendoza" }
+      ]
+    },
+    {
+      "key": "BR",
+      "Text": "Brazil",
+      "Regions": [
+        { "key": "BR-SE", "Text": "Sudeste" },
+        { "key": "BR-NE", "Text": "Nordeste" },
+        { "key": "BR-S", "Text": "Sul" }
+      ],
+      "Provinces": [
+        { "key": "BR-SP", "Text": "São Paulo" },
+        { "key": "BR-BA", "Text": "Bahia" },
+        { "key": "BR-RJ", "Text": "Rio de Janeiro" }
+      ]
+    }
+  ]
+}

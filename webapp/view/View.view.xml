@@ -65,26 +65,30 @@
                     <!-- FORM CONTAINER - OTHER INFORMATION -->
                     <f:FormContainer id="fcOtherInformation" title="{i18n>titleOtherInf}">
 
-                        <f:FormElement id="idPlaceBirth">
-                            <Label id="lbPlaceBirth" text="{i18n>textPlaceBirth}" required="true" />
-                            <Select id="slPlaceBirth" selectedKey="{formDataRegister>/PlaceBirth}"
+                        <f:FormElement id="idNationality">
+                            <Label id="lbNationality" text="{i18n>textNacionality}" required="true" />
+                            <Select id="slNationality"
+                                selectedKey="{formDataRegister>/Nationality}"
                                 forceSelection="true"
-                                items="{typeDocument/>documents}" required="true">
+                                items="{mCountries>/Nations}"
+                                required="true"
+                                change="onChangeSelectNationality"
+                            >
                                 <items>
-                                    <core:Item id="sliPlaceBirth" key="{}" text="{}" />
+                                    <core:Item id="sliNationality" key="{mCountries>key}"
+                                        text="{mCountries>Text}" />
                                 </items>
                             </Select>
                         </f:FormElement>
 
-                        <f:FormElement id="idNationality">
-                            <Label id="lbNationality" text="{i18n>textNacionality}" required="true" />
-                            <Select id="slNationality"
-                                selectedKey="{formDataRegister>/Nationality>/NationalityKey}"
+                        <f:FormElement id="idPlaceBirth">
+                            <Label id="lbPlaceBirth" text="{i18n>textPlaceBirth}" required="true" />
+                            <Select id="slPlaceBirth" selectedKey="{formDataRegister>/PlaceBirth}"
                                 forceSelection="true"
-                                items="{mCountries>/Nations}" required="true">
+                                items="{mPlaceBirth>/Provinces}" required="true">
                                 <items>
-                                    <core:Item id="sliNationality" key="{mCountries>key}"
-                                        text="{mCountries>Text}" />
+                                    <core:Item id="sliPlaceBirth" key="{mPlaceBirth>key}"
+                                        text="{mPlaceBirth>Text}" />
                                 </items>
                             </Select>
                         </f:FormElement>
@@ -121,10 +125,13 @@
                             <Label id="lbCountry" text="{i18n>textCountry}" required="true" />
                             <Select id="slCountry" selectedKey="{formDataRegister>/Country}"
                                 forceSelection="true"
-                                items="{mCountries>/Nations}" required="true">
+                                items="{mCountries>/Nations}"
+                                required="true"
+                                change="onChangeSelectCountry"
+                            >
                                 <items>
                                     <core:Item id="sliCountry"
-                                        key="{mCountries>Key}"
+                                        key="{mCountries>key}"
                                         text="{mCountries>Text}" />
                                 </items>
                             </Select>
@@ -134,10 +141,10 @@
                             <Label id="lbProvince" text="{i18n>textProvince}" required="true" />
                             <Select id="slProvince" selectedKey="{formDataRegister>/Province}"
                                 forceSelection="true"
-                                items="{mProvinces/>Provinces}" required="true">
+                                items="{mAddress>/Provinces}" required="true">
                                 <items>
-                                    <core:Item id="sliProvince" key="{mProvinces>key}"
-                                        text="{mProvinces>Text}" />
+                                    <core:Item id="sliProvince" key="{mAddress>key}"
+                                        text="{mAddress>Text}" />
                                 </items>
                             </Select>
                         </f:FormElement>
@@ -145,9 +152,11 @@
                         <f:FormElement id="idRegion">
                             <Label id="lbRegion" text="{i18n>textRegion}" required="true" />
                             <Select id="slRegion" selectedKey="" forceSelection="true"
-                                items="{typeDocument/>documents}" required="true">
+                                items="{mAddress>/Regions}" required="true">
                                 <items>
-                                    <core:Item id="sliRegion" key="{}" text="{}" />
+                                    <core:Item id="sliRegion"
+                                        key="{mAddress>key}"
+                                        text="{mAddress>Text}" />
                                 </items>
                             </Select>
                         </f:FormElement>
@@ -182,15 +191,63 @@
                     </f:FormContainer>
 
                 </f:formContainers>
-                <!-- LIST CONTENT -->
-
             </f:Form>
+            <Panel id="idPanelList">
+                <content>
+                    <Table id="idTableListOfUsers" items="{oDataSimulator>/users}">
+                        <headerToolbar>
+                            <Toolbar id="t" class="tableHeaderWhite">
+                                <Title id="tableTitle"
+                                    text="test"
+                                />
+                            </Toolbar>
+                        </headerToolbar>
+                        <columns>
+                            <Column id="idNumDoc">
+                                <Text id="textNumDoc" text="{i18n>textNumerDoc}" />
+                            </Column>
+                            <Column id="idFullName">
+                                <Text id="textFullName" text="{i18n>textFullName}" />
+                            </Column>
+                            <Column id="idBirthDate">
+                                <Text id="textBirthDate" text="{i18n>textDateBirth}" />
+                            </Column>
+                            <Column id="idBirthPlace">
+                                <Text id="textPlaceBirth" text="{i18n>textPlaceBirth}" />
+                            </Column>
+                            <Column id="idNationalityColum">
+                                <Text id="textNationality" text="{i18n>textNacionality}" />
+                            </Column>
+                            <Column id="idGender">
+                                <Text id="textGender" text="{i18n>textGenre}" />
+                            </Column>
+                            <Column id="idCivilStatusColumn">
+                                <Text id="textCivilStatus" text="{i18n>textCivilStatus}" />
+                            </Column>
+                        </columns>
+
+                        <items>
+                            <ColumnListItem id="cliItem" type="Navigation">
+                                <cells>
+                                    <Text id="idDocNumCell" text="{oDataSimulator>NumDoc}" />
+                                    <Text id="idFullNameCell" text="{oDataSimulator>Id}" />
+                                    <Text id="idBithDateCell" text="{oDataSimulator>BirthDate}" />
+                                    <Text id="idPlaceBirthCell" text="{oDataSimulator>PlaceBirth}" />
+                                    <Text id="idNationalityCell" text="{oDataSimulator>Nationality}" />
+                                    <Text id="idGenreCell" text="{oDataSimulator>Genre}" />
+                                    <Text id="idEmailCell" text="{oDataSimulator>Email}" />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </content>
+            </Panel>
         </content>
         <footer>
             <OverflowToolbar id="idOverflowToolBar">
                 <ToolbarSpacer id="idToolbarSpacer"></ToolbarSpacer>
                 <Button id="btSave" text="{i18n>textSave}" type="Success" press="saveDataRegister" />
-                <Button id="btClear" text="{i18n>textClear}" type="Reject" press="" />
+                <Button id="btClear" text="{i18n>textClear}" type="Reject" press="clearDataRegister" />
             </OverflowToolbar>
         </footer>
     </Page>
