@@ -14,6 +14,16 @@
       "id": "@sap/generator-fiori:basic",
       "version": "1.17.3",
       "toolsId": "d20bf5a4-f4a6-43f1-b2c0-d3080fc935d1"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/V3/Northwind/Northwind.svc/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
+        }
+      }
     }
   },
   "sap.ui": {
@@ -51,6 +61,10 @@
         "settings": {
           "bundleName": "tobiasmareco.invoices.i18n.i18n"
         }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true
       }
     },
     "resources": {
