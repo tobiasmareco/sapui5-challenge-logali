@@ -15,48 +15,94 @@
                 <f:layout>
                     <f:ResponsiveGridLayout id="lResponsive" />
                 </f:layout>
+                <f:formContainers>
 
-                <f:FormContainer id="fcPersonalInformation" title="{ i18n>titlePersonalInf }">
+                    <f:FormContainer id="fcPersonalInformation" title="{i18n>titlePersonalInf}">
 
-                    <f:FormElement id="idId">
-                        <Label id="lbId" text="{i18n>textId}" required="true" />
-                        <Input id="inputId" value="" required="true"></Input>
-                    </f:FormElement>
+                        <f:FormElement id="idId">
+                            <Label id="lbId" text="{i18n>textId}" required="true" />
+                            <Input id="inputId" value="" required="true"></Input>
+                        </f:FormElement>
 
-                    <f:FormElement id="idTypeDocument">
-                        <Label id="idTypeDoc" text="{i18n>textTypeDoc}" required="true" />
-                        <Select id="inputTypeDoc" selectedKey="" forceSelection="true"
-                            items="{typeDocument/>documents}" required="true">
-                            <items>
-                                <core:Item id="slItemTypeDoc" key="{}" text="{}" />
-                            </items>
-                        </Select>
-                    </f:FormElement>
+                        <f:FormElement id="idTypeDocument">
+                            <Label id="idTypeDoc" text="{i18n>textTypeDoc}" required="true" />
+                            <Select id="inputTypeDoc" selectedKey="" forceSelection="true"
+                                items="{typeDocument/>documents}" required="true">
+                                <items>
+                                    <core:Item id="slItemTypeDoc" key="{}" text="{}" />
+                                </items>
+                            </Select>
+                        </f:FormElement>
 
-                    <f:FormElement id="idNumerDoc">
-                        <Label id="NumerDoc" text="{i18n>textNumerDoc}" required="true" />
-                        <Input id="inputNumerDoc" value="" required="true"></Input>
-                    </f:FormElement>
+                        <f:FormElement id="idNumerDoc">
+                            <Label id="NumerDoc" text="{i18n>textNumerDoc}" required="true" />
+                            <Input id="inputNumerDoc" value="" required="true"></Input>
+                        </f:FormElement>
 
-                    <f:FormElement id="idFirstName">
-                        <Label id="lbFirstName" text="{i18n>textFirstName}" required="true" />
-                        <Input id="inputFirstName" value="" required="true"></Input>
-                    </f:FormElement>
+                        <f:FormElement id="idFirstName">
+                            <Label id="lbFirstName" text="{i18n>textFirstName}" required="true" />
+                            <Input id="inputFirstName" value="" required="true"></Input>
+                        </f:FormElement>
 
-                    <f:FormElement id="idLastName">
-                        <Label id="lbLastName" text="{i18n>textLastName}" required="true" />
-                        <Input id="inputLastName" value="" required="true"></Input>
-                    </f:FormElement>
+                        <f:FormElement id="idLastName">
+                            <Label id="lbLastName" text="{i18n>textLastName}" required="true" />
+                            <Input id="inputLastName" value="" required="true"></Input>
+                        </f:FormElement>
 
-                    <f:FormElement id="idDateBirth">
-                        <Label id="lbDateBirth" text="{i18n>textDateBirth}" required="true" />
-                        <DatePicker id="dpDateBirth" displayFormat="dd/MM/yyyy"
-                            placeholder="select date" value="formData>/BirthDate" width="80%" />
-                    </f:FormElement>
+                        <f:FormElement id="idDateBirth">
+                            <Label id="lbDateBirth" text="{i18n>textDateBirth}" required="true" />
+                            <DatePicker id="dpDateBirth" displayFormat="dd/MM/yyyy"
+                                placeholder="select date" value="formData>/BirthDate" width="80%" />
+                        </f:FormElement>
 
+                    </f:FormContainer>
 
-                </f:FormContainer>
-                
+                    <f:FormContainer id="fcOtherInformation" title="{i18n>titleOtherInf}">
+
+                        <f:FormElement id="idPlaceBirth">
+                            <Label id="lbPlaceBirth" text="{i18n>textPlaceBirth}" required="true" />
+                            <Select id="slPlaceBirth" selectedKey="" forceSelection="true"
+                                items="{typeDocument/>documents}" required="true">
+                                <items>
+                                    <core:Item id="sliPlaceBirth" key="{}" text="{}" />
+                                </items>
+                            </Select>
+                        </f:FormElement>
+
+                        <f:FormElement id="idNationality">
+                            <Label id="lbNationality" text="{i18n>textNacionality}" required="true" />
+                            <Select id="slNationality" selectedKey="" forceSelection="true"
+                                items="{typeDocument/>documents}" required="true">
+                                <items>
+                                    <core:Item id="sliNationality" key="{}" text="{}" />
+                                </items>
+                            </Select>
+                        </f:FormElement>
+
+                        <f:FormElement id="idGenre">
+                            <Label id="lbGenre" text="{i18n>textGenre}" required="true" />
+                            <Select id="slGenre" selectedKey="" forceSelection="true"
+                                items="{typeDocument/>documents}" required="true">
+                                <items>
+                                    <core:Item id="sliGenre" key="{}" text="{}" />
+                                </items>
+                            </Select>
+                        </f:FormElement>
+
+                        <f:FormElement id="idCivilStatus">
+                            <Label id="lbCivilStatus" text="{i18n>textCivilStatus}" required="true" />
+                            <Select id="slCivilStatus" selectedKey="" forceSelection="true"
+                                items="{typeDocument/>documents}" required="true">
+                                <items>
+                                    <core:Item id="sliCivilStatus" key="{}" text="{}" />
+                                </items>
+                            </Select>
+                        </f:FormElement>
+
+                    </f:FormContainer>
+
+                </f:formContainers>
+
             </f:Form>
         </content>
     </Page>
